@@ -1,10 +1,6 @@
 // 1 перебор массива с выводом в консоль каждого элемента
 let arrayFilms = ['Ведьмак', 'Довод', 'Человек паук', 'Матрица',
  'Тьма', 'Сноуден', 'Спарта'];
-// console.log(arrayFilms);
-// for (let film of arrayFilms){
-// console.log(film);
-// }
 for (let i = 0; i < arrayFilms.length; i++ ){
     console.log(arrayFilms[i]);    
 }
@@ -65,25 +61,22 @@ less10(50);
 
 
 // 9 цикл для простых чисел
-function prostCh(limit) {
-    let flag = 1;
-    if (limit < 2) {
-        console.log('Введите правильное число');
-    } else {
-        for (let n = 2; n <= limit; n++) {
-            for (let j = 2; j < n; j++) {
-                if (n % j == 0) {
-                    flag = 0;
-                }
-            }
-        if (flag == 1){
-            console.log(n);
-        }}
-    
+function prostCh(num) {
+    for (let n = 2; n < num; n++) {
+        if (num % n === 0) {
+            return false;
+        }
+    }
+    return num;
+}
+function cikl(limit) {
+    for (let num = 2; num <= limit; num++) {
+        if (prostCh(num)) {
+            console.log(num);
+        }
     }
 }
-prostCh(50);
-
+cikl(51);
 
 
 // 10 цикл нечетных чисел
@@ -102,4 +95,4 @@ function oddNum(lim) {
         }
     }
 }
-oddNum(-25);
+oddNum(55);
